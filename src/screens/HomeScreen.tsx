@@ -5,16 +5,18 @@ import {
   Text,
   TouchableOpacity,
   StyleSheet,
-  ScrollView,
 } from 'react-native';
-import type { NativeStackScreenProps } from '@react-navigation/native-stack';
-import type { RootStackParamList } from '../../App';
 
-type Props = NativeStackScreenProps<RootStackParamList, 'Home'>;
+export default function HomeScreen({ navigation }: any) {
+  const buttons = [
+    { title: 'About Me', screen: 'About' },
+    { title: 'My Skills', screen: 'Skills' },
+    { title: 'My Projects', screen: 'Projects' },
+    { title: 'My Profile', screen: 'Profile' },
+  ];
 
-export default function HomeScreen({ navigation }: Props) {
   return (
-    <ScrollView contentContainerStyle={styles.container}>
+    <View style={styles.container}>
       <View style={styles.avatar}>
         <Text style={styles.avatarText}>UA</Text>
       </View>
@@ -22,82 +24,62 @@ export default function HomeScreen({ navigation }: Props) {
       <Text style={styles.name}>Uwimbabazi Aimerance</Text>
       <Text style={styles.course}>Software Engineering</Text>
 
-      <TouchableOpacity
-        style={styles.button}
-        onPress={() => navigation.navigate('About')}
-      >
-        <Text style={styles.buttonText}>About Me</Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity
-        style={styles.button}
-        onPress={() => navigation.navigate('Skills')}
-      >
-        <Text style={styles.buttonText}>My Skills</Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity
-        style={styles.button}
-        onPress={() => navigation.navigate('Projects')}
-      >
-        <Text style={styles.buttonText}>My Projects</Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity
-        style={styles.button}
-        onPress={() => navigation.navigate('Profile')}
-      >
-        <Text style={styles.buttonText}>My Profile</Text>
-      </TouchableOpacity>
-    </ScrollView>
+      {buttons.map((item) => (
+        <TouchableOpacity
+          key={item.screen}
+          style={styles.button}
+          onPress={() => navigation.navigate(item.screen)}
+        >
+          <Text style={styles.buttonText}>{item.title}</Text>
+        </TouchableOpacity>
+      ))}
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flexGrow: 1,
-    justifyContent: 'center',
+    flex: 1,
+    backgroundColor: '#F3F6FC',
     alignItems: 'center',
-    padding: 25,
-    backgroundColor: '#F1F5F9',
+    justifyContent: 'center',
+    padding: 20,
   },
   avatar: {
     width: 100,
     height: 100,
     borderRadius: 50,
-    backgroundColor: '#2457C5',
+    backgroundColor: '#2447A8',
     alignItems: 'center',
     justifyContent: 'center',
-    marginBottom: 20,
+    marginBottom: 15,
   },
   avatarText: {
-    fontSize: 32,
+    color: 'white',
+    fontSize: 30,
     fontWeight: 'bold',
-    color: '#FFFFFF',
   },
   name: {
-    fontSize: 25,
+    fontSize: 23,
     fontWeight: 'bold',
+    marginBottom: 6,
     color: '#172554',
-    textAlign: 'center',
   },
   course: {
     fontSize: 16,
-    color: '#64748B',
-    marginTop: 8,
+    color: '#555',
     marginBottom: 25,
   },
   button: {
-    width: '100%',
-    maxWidth: 350,
-    backgroundColor: '#2457C5',
-    padding: 16,
+    width: '90%',
+    backgroundColor: '#2447A8',
+    padding: 15,
     borderRadius: 10,
     marginVertical: 7,
     alignItems: 'center',
   },
   buttonText: {
-    color: '#FFFFFF',
+    color: 'white',
     fontSize: 16,
     fontWeight: 'bold',
   },
