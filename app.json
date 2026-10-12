@@ -1,0 +1,33 @@
+
+{
+  "expo": {
+    "name": "UAPortfolio",
+    "slug": "uaportfolio",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "package": "com.uwimbabaziaimerance.uaportfolio.r2528028",
+      "adaptiveIcon": {
+        "backgroundColor": "#E6F4FE",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "verificationCode": "MOB-A2-8028",
+      "eas": {
+        "projectId": "9c7e2936-2d57-4a07-a03d-55be20220696"
+      }
+    }
+  }
+}
