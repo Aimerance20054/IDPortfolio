@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -22,7 +21,6 @@ function ProjectsStack() {
         component={ProjectsScreen}
         options={{ title: 'My Projects' }}
       />
-
       <Stack.Screen
         name="ProjectDetails"
         component={ProjectDetailsScreen}
@@ -38,15 +36,11 @@ export default function App() {
       <Tab.Navigator
         initialRouteName="Home"
         screenOptions={{
-          headerStyle: {
-            backgroundColor: '#2457C5',
-          },
+          headerStyle: { backgroundColor: '#2457C5' },
           headerTintColor: '#FFFFFF',
           tabBarActiveTintColor: '#2457C5',
           tabBarInactiveTintColor: '#64748B',
-          tabBarLabelStyle: {
-            fontSize: 11,
-          },
+          tabBarLabelStyle: { fontSize: 11 },
         }}
       >
         <Tab.Screen
@@ -54,28 +48,21 @@ export default function App() {
           component={HomeScreen}
           options={{ title: 'Home' }}
         />
-
         <Tab.Screen
           name="Skills"
           component={SkillsScreen}
           options={{ title: 'My Skills' }}
         />
-
         <Tab.Screen
           name="Projects"
           component={ProjectsStack}
-          options={{
-            title: 'My Projects',
-            headerShown: false,
-          }}
+          options={{ title: 'My Projects', headerShown: false }}
         />
-
         <Tab.Screen
           name="Profile"
           component={ProfileScreen}
           options={{ title: 'My Profile' }}
         />
-
         <Tab.Screen
           name="About"
           component={AboutScreen}

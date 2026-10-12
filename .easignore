@@ -22,9 +22,9 @@ CAT/
 *.mkv
 *.avi
 *.mov
-*.ts
 *.log
 web-build/
+
 dist/
 coverage/
 android/.gradle/
